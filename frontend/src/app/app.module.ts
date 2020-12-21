@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,9 +17,13 @@ import { MatButtonModule } from '@angular/material/button';
 // User components
 import { RsNge100Component } from './rs-nge100/rs-nge100.component';
 
+// Services
+import { DashboardService } from './dashboard.service'
+
 @NgModule({
   declarations: [
     AppComponent,
+    // Custom component
     RsNge100Component
   ],
   imports: [
@@ -26,12 +31,15 @@ import { RsNge100Component } from './rs-nge100/rs-nge100.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    // Material desing modules
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatButtonModule
+    MatButtonModule,
+    // Service module
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DashboardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
